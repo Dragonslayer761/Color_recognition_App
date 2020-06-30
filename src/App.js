@@ -1,26 +1,30 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
 import './App.css';
+import Navigation from'./Components/Navigation/Navigation';
+import ImageLinkFrom from './Components/ImageLinkFrom/ImageLinkFrom';
+import RankComponent from './Components/RankComponent/RankComponent';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component{
+  constructor(){
+    super();
+    this.state={
+      inpuut:'',
+    }
+  }
+  onInputChange=(event)=>{
+    console.log(event.target.value);
+  }
+  onSubmit=()=>{
+    console.log('click');
+  }
+  render(){
+    return(
+      <div className="App">
+        <Navigation/>
+        <RankComponent/>
+        <ImageLinkFrom onInputChange={this.onInputChange} onSubmit={this.onSubmit} />
+      </div>
+    )
+  }
 }
-
 export default App;
