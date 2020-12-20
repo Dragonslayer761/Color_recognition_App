@@ -1,15 +1,15 @@
 import React from 'react';
 
-const RankComponent = () => {
+const RankComponent = ({userName , userEntries}) => {
     return (
-       <div className="center">
-            <div className="white f3 center">
-            {'your current rank is :'}
+        <div>
+        <div className='white f3'>
+          {`${userName}, your current entry count is...`}
         </div>
-        <div className="white f1 center">
-            {'#5'}
+        <div className='white f1'>
+          {userEntries}
         </div>
-       </div>
+      </div>
     )
 }
 
